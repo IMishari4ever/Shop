@@ -263,7 +263,7 @@ const Order = () => {
       <Promotion />
       <Navbar />
       <Wrapper>
-        <Title>Order #{item._id.substring(0, 8)}</Title>
+        <Title>الطلب #{item._id.substring(0, 8)}</Title>
         <TextContainer>
           <Left>
             <Action
@@ -272,28 +272,28 @@ const Order = () => {
               }}
             >
               <ArrowRightAltIcon style={{ transform: "rotate(180deg)" }} />
-              <Text style={{ marginLeft: "5px" }}>back</Text>
+              <Text style={{ marginLeft: "5px" }}>إلى الخلف</Text>
             </Action>
           </Left>
           <Right style={{ padding: "0" }}>
-            {status === "To Ship" ? (
+            {status === "In progress" ? (
               <Action>
                 <Button
                   color={"black"}
                   bg={"#f8f8f8"}
                   onClick={() => handleModal("Cancel")}
                 >
-                  Cancel Order
+                  الغاء الطلب
                 </Button>
               </Action>
-            ) : status === "Shipped" ? (
+            ) : status === "Completed" ? (
               <Action>
                 <Button
                   color={"white"}
                   bg={"#110f12"}
                   onClick={() => handleModal("Receive")}
                 >
-                  Order Received
+                  تم استلام طلبك بنجاح
                 </Button>
               </Action>
             ) : null}
@@ -301,22 +301,22 @@ const Order = () => {
         </TextContainer>
         <OrderContainer>
           <ProductContainer>
-            <Subtitle>Ordered Shoes</Subtitle>
+            <Subtitle>المنتجات الذي تم طلبها</Subtitle>
             <TextContainer>
               <Left>
-                <Text>Product</Text>
+                <Text>المنتجات</Text>
               </Left>
               <Center>
-                <Text>Amount</Text>
+                <Text>العدد</Text>
               </Center>
               <Right>
-                <Text>Status</Text>
+                <Text>الحالة</Text>
               </Right>
             </TextContainer>
             <Hr height={"3px"} />
             {products?.map((i) => (
               <Item
-                key={i.productId._id + i.productId.size + i.productId.color}
+                key={i.productId._id + i.productId.size}
               >
                 <Info>
                   <Product>
@@ -333,12 +333,8 @@ const Order = () => {
                           <ProductName>{i.productId.name}</ProductName>
                           <ProductInfo>{i.productId.brand}</ProductInfo>
                           <ProductInfo> {i.productId.size} US</ProductInfo>
-                          <ProductColor>
-                            <ColorOutline>
-                              <BoxColor color={i.productId.color} />
-                            </ColorOutline>
-                          </ProductColor>
-                          <ProductInfo>Qty: {i.productId.quantity}</ProductInfo>
+
+                          <ProductInfo>الكمية: {i.productId.quantity}</ProductInfo>
                         </ProductDetails>
                       </Details>
                     </Left>
@@ -359,7 +355,7 @@ const Order = () => {
             <Summary>
               <SummaryLeft>
                 <SummaryDiv>
-                  <Subtitle>Billing Summary</Subtitle>
+                  <Subtitle>ملخص الفاتورة</Subtitle>
                   <SummaryItem>
                     <SummaryItemLeft>{item.name}</SummaryItemLeft>
                     <SummaryItemRight>
@@ -379,9 +375,9 @@ const Order = () => {
                   </SummaryItem>
                 </SummaryDiv>
                 <SummaryDiv left={"left"}>
-                  <Subtitle>Order Summary</Subtitle>
+                  <Subtitle>ملخص الطلب</Subtitle>
                   <SummaryItem>
-                    <SummaryItemLeft>Subtotal</SummaryItemLeft>
+                    <SummaryItemLeft>القيمة الأولية</SummaryItemLeft>
                     <SummaryItemRight>
                       {totalAmount < 5249
                         ? formatAmount(totalAmount - 250)
@@ -389,14 +385,14 @@ const Order = () => {
                     </SummaryItemRight>
                   </SummaryItem>
                   <SummaryItem>
-                    <SummaryItemLeft>Shipping</SummaryItemLeft>
+                    <SummaryItemLeft>ضريبة بوابة الدفع</SummaryItemLeft>
                     <SummaryItemRight>
                       {totalAmount > 4999 ? "free" : formatAmount(250)}
                     </SummaryItemRight>
                   </SummaryItem>
                   <Hr height={"2px"} />
                   <SummaryItem>
-                    <SummaryItemLeft>Total</SummaryItemLeft>
+                    <SummaryItemLeft>المجموع</SummaryItemLeft>
                     <SummaryItemRight>
                       {formatAmount(totalAmount)}
                     </SummaryItemRight>

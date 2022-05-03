@@ -109,7 +109,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Left onClick={() => navigate("/")}>
-          <Logo>A Y L O</Logo>
+          <Logo>RAY</Logo>
         </Left>
         {MenuList.map((menu, index) => {
           return (
@@ -159,7 +159,7 @@ const Navbar = () => {
                 navigate("/sign-in");
               }}
             >
-              SIGN IN
+              تسجيل الدخول
             </MenuItem>
           )}
         </Right>

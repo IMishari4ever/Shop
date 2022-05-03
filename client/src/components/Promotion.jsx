@@ -30,7 +30,7 @@ const Container = styled.div`
 `;
 
 const Promotion = () => {
-  return <Container>Get 20% off on selected items</Container>;
+  return <Container>احصل على تخفيض 50% عند شرائك لأكثر من منتج</Container>;
 };
 
 export default Promotion;

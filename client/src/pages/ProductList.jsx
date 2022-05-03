@@ -85,9 +85,9 @@ const ProductList = () => {
       <Navbar />
       <Wrapper>
         {path !== "instock" ? (
-          <Title>{path.toUpperCase()} SHOES</Title>
+          <Title>{path.toUpperCase()}المنتجات</Title>
         ) : (
-          <Title>ALL SHOES</Title>
+          <Title>كل المنتجات</Title>
         )}
         <FilterContainer>
           <Filter>
@@ -95,32 +95,26 @@ const ProductList = () => {
             <Select
               name="category"
               onChange={handleFilters}
-              disabled={path.includes("men") && true}
+              disabled={path.includes("premium") && true}
             >
-              <Option>men</Option>
-              <Option>women</Option>
+              <Option>premium</Option>
+              <Option>netflix</Option>
             </Select>
             <Select
               name="brand"
               onChange={handleFilters}
               disabled={
-                path.includes("men") === false && path !== "instock"
+                path.includes("premium") === false && path !== "instock"
                   ? true
                   : false
               }
             >
-              <Option>adidas</Option>
-              <Option>new balance</Option>
-              <Option>nike</Option>
-              <Option>puma</Option>
             </Select>
             <Select name="sort" onChange={(e) => setSort(e.target.value)}>
-              <Option value="oldest">oldest</Option>
-              <Option value="newest">newest</Option>
-              <Option value="ascending">ascending</Option>
-              <Option value="descending">descending</Option>
-              <Option value="lowest">price high to low</Option>
-              <Option value="highest">price low to high</Option>
+              <Option value="oldest">الأقدم</Option>
+              <Option value="newest">الأحدث</Option>
+              <Option value="lowest">السعر من الأعلى إلى الأقل</Option>
+              <Option value="highest">السعر من الأقل إلى الأعلى</Option>
             </Select>
             <Button onClick={reset}>Clear filters</Button>
           </Filter>

@@ -56,20 +56,20 @@ const FailedModal = ({ display }) => {
     <Container display={display}>
       <Wrapper>
         {path === "sign-up" ? (
-          <Header>Unable to Sign Up</Header>
+          <Header>حدث خطأ بالتسجيل</Header>
         ) : (
-          <Header>Unable to Sign In</Header>
+          <Header>حدث خطأ بتسجيل الدخول</Header>
         )}
         {path === "sign-up" ? (
           <Subheader>
-            The username/email is already taken. Please try again.
+            اسم المستخدم او الأميل مأخوذ بالفعل، يرجى المحاولة مجددًا
           </Subheader>
         ) : (
           <Subheader>
-            Your username/password is incorrect. Please try again.
+            اسم المستخدم او كلمة السر خاطئة،، يرجى المحاولة مجددًا
           </Subheader>
         )}
-        <Button onClick={closeModal}>Okay</Button>
+        <Button onClick={closeModal}>حسنًا</Button>
       </Wrapper>
     </Container>
   );

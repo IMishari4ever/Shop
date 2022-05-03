@@ -7,7 +7,8 @@ import Newsletter from "../components/Newsletter";
 import PopularProducts from "../components/PopularProducts";
 import Carousel from "../components/Carousel";
 import { useLocation } from "react-router";
-
+import Intro from './../components/Intro';
+import './App.css'
 const Home = () => {
   const location = useLocation();
   const path = location.pathname;
@@ -15,9 +16,11 @@ const Home = () => {
     <div>
       <Promotion />
       <Navbar />
-      <Carousel />
+      <div className="App">
+     <Intro />
+      </div>
       <Categories />
-      <PopularProducts path={path} description="HOTTEST SHOES RIGHT NOW" />
+      <PopularProducts path={path} description="الخدمات الأكثر طلبًا" />
       <Newsletter />
       <Footer />
     </div>

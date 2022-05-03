@@ -64,13 +64,12 @@ const Button = styled.button`
 const Newsletter = () => {
   return (
     <Container>
-      <Title>STAY IN TOUCH</Title>
+      <Title>خلك منتبه</Title>
       <Text>
-        Sign up for our newsletter to get latest updates from your favorite shoe
-        brand and great deals.
+        سجل بالإشعارات عشان تكون مطلع أول بأول على العروض والتخفيضات والمنتجات الجديدة
       </Text>
       <InputContainer>
-        <Input type="email" placeholder="Enter your email here" />
+        <Input type="email" placeholder="حط اميلك هنا" />
         <Button>
           <ArrowForwardIcon />
         </Button>

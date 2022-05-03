@@ -9,7 +9,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import { openModal } from "../redux/modalRedux";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
 const Container = styled.div`
   position: relative;
 `;
@@ -169,7 +168,7 @@ const Account = () => {
       <Promotion />
       <Navbar />
       <MainContainer>
-        <Title>Account</Title>
+        <Title>الحساب</Title>
         <TextContainer>
           <Left>
             <Action
@@ -178,14 +177,14 @@ const Account = () => {
               }}
             >
               <ArrowRightAltIcon style={{ transform: "rotate(180deg)" }} />
-              <Text>back</Text>
+              <Text>إلى الخلف</Text>
             </Action>
           </Left>
           {currentUser.isAdmin && (
             <Right>
               <Action>
-                <Link href="URL of your admin panel">
-                  <Text>admin panel</Text>
+                <Link href="admin">
+                  <Text>لوحة الإدارة</Text>
                   <ArrowRightAltIcon style={{ marginLeft: "5px" }} />
                 </Link>
               </Action>
@@ -195,7 +194,7 @@ const Account = () => {
         <TextContainer style={{ marginBottom: "30px" }}>
           <Center>
             <Navigation className="active">
-              <Text>Account Settings</Text>
+              <Text>اعدادات الحساب</Text>
             </Navigation>
             <Divider></Divider>
             <Navigation>
@@ -204,16 +203,16 @@ const Account = () => {
                   navigate("/orders");
                 }}
               >
-                Order History
+                سجل الطلبات
               </Text>
             </Navigation>
           </Center>
         </TextContainer>
         <Wrapper>
-          <Header>User Info</Header>
+          <Header>معلومات المستخدم</Header>
           <InfoContainer>
             <Category>
-              <InfoText>First Name:</InfoText>
+              <InfoText>الاسم الاول</InfoText>
             </Category>
             <Value>
               <InfoText>{capitalize(currentUser?.firstname)}</InfoText>
@@ -224,7 +223,7 @@ const Account = () => {
           </InfoContainer>
           <InfoContainer>
             <Category>
-              <InfoText>Last Name:</InfoText>
+              <InfoText>الاسم الاخير</InfoText>
             </Category>
             <Value>
               <InfoText>{capitalize(currentUser?.lastname)}</InfoText>
@@ -235,7 +234,7 @@ const Account = () => {
           </InfoContainer>
           <InfoContainer>
             <Category>
-              <InfoText>Username:</InfoText>
+              <InfoText>اسم المستخدم</InfoText>
             </Category>
             <Value>
               <InfoText>{currentUser?.username}</InfoText>
@@ -246,7 +245,7 @@ const Account = () => {
           </InfoContainer>
           <InfoContainer>
             <Category>
-              <InfoText>Email:</InfoText>
+              <InfoText>الاميل</InfoText>
             </Category>
             <Value>
               <InfoText>{currentUser?.email}</InfoText>
@@ -257,7 +256,7 @@ const Account = () => {
           </InfoContainer>
           <InfoContainer>
             <Category>
-              <InfoText>Password:</InfoText>
+              <InfoText>كلمة السر</InfoText>
             </Category>
             <Value>
               <InfoText>••••••••••</InfoText>

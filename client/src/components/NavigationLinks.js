@@ -6,36 +6,18 @@ export const MenuList = [
   },
   {
     id: 1,
-    title: "Men",
-    path: "/products/men",
+    title: "Premium",
+    path: "/products/premium",
   },
   {
     id: 2,
-    title: "Women",
-    path: "/products/women",
+    title: "Netflix",
+    path: "/products/netflix",
   },
   {
     id: 3,
-    title: "Brands",
+    title: "All Services",
     path: "/products/instock",
   },
 ];
 
-export const BrandList = [
-  {
-    title: "Adidas",
-    path: "/products/adidas",
-  },
-  {
-    title: "New Balance",
-    path: "/products/newbalance",
-  },
-  {
-    title: "Nike",
-    path: "/products/nike",
-  },
-  {
-    title: "Puma",
-    path: "/products/puma",
-  },
-];

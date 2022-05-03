@@ -27,7 +27,7 @@ router.post("/signup", async (req, res) => {
     // SIGN TOKEN
     const accessToken = jwt.sign(
       { id: savedUser._id, isAdmin: savedUser.isAdmin },
-      process.env.JWT_EXPIRES_IN,
+      process.env.JWT_SECRET,
       { expiresIn: "3d" }
     );
     // SEND RESPONSE
@@ -64,7 +64,7 @@ router.post("/signin", async (req, res) => {
         id: user._id,
         isAdmin: user.isAdmin,
       },
-      process.env.JWT_EXPIRES_IN,
+      process.env.JWT_SECRET,
       { expiresIn: "3d" }
     );
 

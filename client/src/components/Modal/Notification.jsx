@@ -36,13 +36,13 @@ const Notification = ({ open, setOpen, type }) => {
           variant="filled"
         >
           {type === "add"
-            ? "Successfully added!"
+            ? "تم الإضافة بنجاح"
             : type === "update"
-            ? "Successfully updated!"
+            ? "تم التحديث بنجاح"
             : type === "remove"
-            ? "Successfully removed!"
+            ? "تم الحذف بنجاح"
             : type === "remind"
-            ? "Please select size and color first."
+            ? "Please select all things first."
             : "Copied to clipboard!"}
         </MuiAlert>
       </Snackbar>

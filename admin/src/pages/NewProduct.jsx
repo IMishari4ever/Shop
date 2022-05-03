@@ -201,7 +201,7 @@ const NewProduct = () => {
           <Input
             name="brand"
             type="text"
-            placeholder="description"
+            placeholder="brand"
             required
             onChange={handleInput}
           />
@@ -213,16 +213,30 @@ const NewProduct = () => {
             onChange={handleInput}
           />
           <Input
+            name="color"
+            type="text"
+            placeholder="available color/s"
+            required
+            onChange={handleColors}
+          />
+          <Input
             name="size"
             type="text"
-            placeholder="subscription period"
+            placeholder="available size/s"
             required
             onChange={handleSizes}
           />
           <Input
             name="stocks"
             type="number"
-            placeholder="available stocks"
+            placeholder="stocks"
+            required
+            onChange={handleInput}
+          />
+          <Input
+            name="credit"
+            type="text"
+            placeholder="brand's website url"
             required
             onChange={handleInput}
           />
@@ -238,25 +252,26 @@ const NewProduct = () => {
             <CategoryInput
               type="radio"
               name="category"
-              id="men"
-              value="men"
+              id="premium"
+              value="premium"
               onChange={handleInput}
             />
-            <CategoryLabel htmlFor="men">Premium</CategoryLabel>
+            <CategoryLabel htmlFor="premium">Premium</CategoryLabel>
             <CategoryInput
               type="radio"
               name="category"
-              id="women"
-              value="women"
+              id="netflix"
+              value="netflix"
               onChange={handleInput}
             />
-            <CategoryLabel htmlFor="women">Netflix</CategoryLabel>
+            <CategoryLabel htmlFor="netflix">Netflix</CategoryLabel>
           </Category>
           <ProductItem>
             <Label>Image</Label>
             <FileInput
               name="img"
               type="file"
+              required
               onChange={(e) => setFile(e.target.files[0])}
             />
           </ProductItem>

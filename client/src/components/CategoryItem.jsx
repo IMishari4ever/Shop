@@ -63,7 +63,7 @@ const CategoryItem = ({ item, index }) => {
       <Info>
         <Title>{item.title}</Title>
         <Button onClick={() => navigate(`/products/${item.path}`)}>
-          Shop Now
+          تسوق الان
         </Button>
       </Info>
     </Container>

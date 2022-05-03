@@ -113,7 +113,7 @@ const SignIn = () => {
       <Promotion />
       <Navbar />
       <MainContainer>
-        <Title>WELCOME BACK</Title>
+        <Title>مرحبًا بك مجددًا</Title>
         <Wrapper>
           <Form>
             <InputField
@@ -135,19 +135,19 @@ const SignIn = () => {
                 style={{ marginRight: "10px" }}
                 defaultChecked
               />
-              Keep me logged in
+              تذكرني
             </Agreement>
             <Button onClick={handleSubmit} disabled={isFetching ? true : false}>
-              Sign In
+              تسجيل الدخول
             </Button>
           </Form>
-          <Options>Forgot password?</Options>
+          <Options>نسيت كلمة السر ؟</Options>
           <Options
             onClick={() => {
               navigate("/sign-up");
             }}
           >
-            Not yet a member? Click here
+            ما عندك حساب باقي ؟ اضغط هنا
           </Options>
         </Wrapper>
       </MainContainer>

@@ -105,9 +105,9 @@ const OrderList = () => {
               color:
                 params.row.status === "Delivered"
                   ? "#5cb85c"
-                  : params.row.status === "Shipped"
+                  : params.row.status === "Completed"
                   ? "#0275d8"
-                  : params.row.status === "To Ship"
+                  : params.row.status === "In Progress"
                   ? "#110f12"
                   : "#d9534f",
             }}

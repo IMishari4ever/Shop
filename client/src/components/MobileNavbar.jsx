@@ -117,7 +117,7 @@ const MobileNavbar = () => {
         </MenuItem>
       </Left>
       <Center onClick={() => navigate("/")}>
-        <Logo>A Y L O</Logo>
+        <Logo>R A Y</Logo>
       </Center>
       <Right>
         {user !== null ? (
@@ -143,7 +143,7 @@ const MobileNavbar = () => {
           <CloseIcon onClick={handleMenu} />
         </CloseLeft>
         <Top>
-          <Logo>MENU</Logo>
+          <Logo>القائمة</Logo>
         </Top>
         {MenuList.map((menu, index) => {
           return (

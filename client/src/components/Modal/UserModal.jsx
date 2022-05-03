@@ -100,7 +100,7 @@ export const UserMobileModal = () => {
           <ListItemIcon>
             <PersonOutlinedIcon />
           </ListItemIcon>
-          Account
+          الحساب
         </MenuItem>
         <MenuItem
           style={{ transform: "scale(0.9)" }}
@@ -111,7 +111,7 @@ export const UserMobileModal = () => {
           <ListItemIcon>
             <ShoppingBagOutlinedIcon />
           </ListItemIcon>
-          Bag
+          السلة
         </MenuItem>
         <MenuItem
           style={{ transform: "scale(0.9)" }}
@@ -122,7 +122,7 @@ export const UserMobileModal = () => {
           <ListItemIcon>
             <PlaylistAddCheckOutlinedIcon />
           </ListItemIcon>
-          Orders
+          الطلبات
         </MenuItem>
         <MenuItem
           style={{ transform: "scale(0.9)" }}
@@ -133,7 +133,7 @@ export const UserMobileModal = () => {
           <ListItemIcon>
             <FavoriteBorderOutlinedIcon />
           </ListItemIcon>
-          Wishlist
+          المفضلة
         </MenuItem>
         <Divider />
         <MenuItem
@@ -143,7 +143,7 @@ export const UserMobileModal = () => {
           <ListItemIcon>
             <LogoutIcon />
           </ListItemIcon>
-          Sign Out
+          تسجيل الخروج
         </MenuItem>
       </Menu>
     </React.Fragment>
@@ -234,7 +234,7 @@ export const UserModal = () => {
           <ListItemIcon>
             <PersonOutlinedIcon />
           </ListItemIcon>
-          Account
+          الحساب
         </MenuItem>
         <MenuItem
           style={{ transform: "scale(0.9)" }}
@@ -245,7 +245,7 @@ export const UserModal = () => {
           <ListItemIcon>
             <PlaylistAddCheckOutlinedIcon />
           </ListItemIcon>
-          Orders
+          الطلبات
         </MenuItem>
 
         <Divider />
@@ -256,7 +256,7 @@ export const UserModal = () => {
           <ListItemIcon>
             <LogoutIcon />
           </ListItemIcon>
-          Sign Out
+          تسجيل الخروج
         </MenuItem>
       </Menu>
     </React.Fragment>

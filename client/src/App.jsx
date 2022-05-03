@@ -17,7 +17,7 @@ import Account from "./pages/Account";
 import OrderHistory from "./pages/Orders";
 import { useSelector } from "react-redux";
 import ScrollToTop from "./utility/ScrollToTop";
-
+import './App.css'
 const App = () => {
   const user = useSelector((state) => state.user.currentUser);
   return (

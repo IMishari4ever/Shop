@@ -135,13 +135,13 @@ const UpdateOrderModal = () => {
         <CloseButton>
           <CloseIcon onClick={handleClose} />
         </CloseButton>
-        <Header>Update Order Status</Header>
+        <Header>تحديث حالة الطلب</Header>
         <Form onSubmit={handleUpdate}>
           <Message>
             {order.status === "To Ship"
-              ? "Are you sure you want to cancel your order? Your card will not be charge."
+              ? "هل انت متأكد انك تريد الغاء الطلب؟ لن يتم الخصم من بطاقتك"
               : order.status === "Shipped"
-              ? "Did you received your order/s properly? If you select 'yes', your card will be charge."
+              ? "هل استلمت طلبك ؟"
               : null}
           </Message>
           <Agreement>
@@ -160,7 +160,7 @@ const UpdateOrderModal = () => {
                 id="yes"
                 required
               />
-              Yes
+              نعم
             </Label>
             <Label htmlFor="no">
               <Radio
@@ -171,11 +171,11 @@ const UpdateOrderModal = () => {
                 id="no"
                 required
               />
-              No
+              لا
             </Label>
           </Agreement>
           <Button type="submit" disabled={loading ? true : false}>
-            Update Order
+            تحديث حالة الطلب
           </Button>
         </Form>
       </Modal>

@@ -95,7 +95,7 @@ const Orders = () => {
       <Promotion />
       <Navbar />
       <MainContainer>
-        <Title>Orders</Title>
+        <Title>الطلبات</Title>
         <TextContainer>
           <Left>
             <Action
@@ -104,7 +104,7 @@ const Orders = () => {
               }}
             >
               <ArrowRightAltIcon style={{ transform: "rotate(180deg)" }} />
-              <Text>back</Text>
+              <Text>إلى الخلف</Text>
             </Action>
           </Left>
         </TextContainer>
@@ -116,12 +116,12 @@ const Orders = () => {
                   navigate("/account");
                 }}
               >
-                Account Settings
+                اعدادات الحساب
               </Text>
             </Navigation>
             <Divider></Divider>
             <Navigation className="active">
-              <Text>Order History</Text>
+              <Text>سجل الطلبات</Text>
             </Navigation>
           </Center>
         </TextContainer>

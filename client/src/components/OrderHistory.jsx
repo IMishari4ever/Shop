@@ -58,17 +58,17 @@ const OrderHistory = () => {
   return (
     <Container>
       <Head>
-        <Text>Order No.</Text>
-        <Text>Date</Text>
-        <Text>Amount</Text>
-        <Text>Status</Text>
+        <Text>رقم الطلب</Text>
+        <Text>التاريخ</Text>
+        <Text>السعر</Text>
+        <Text>الحالة</Text>
       </Head>
       <Hr height={"2px"} />
       <MainContainer>
         <Wrapper>
           {order?.length === 0 && (
             <Text style={{ marginTop: "30px" }}>
-              You do not have any orders
+              ما عندك اي طلبات
             </Text>
           )}
           {order?.map((order) => (

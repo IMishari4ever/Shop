@@ -96,12 +96,12 @@ const Notify = ({ showModal, setShowModal }) => {
         <CloseButton>
           <CloseIcon onClick={closeModal} />
         </CloseButton>
-        <Header>Get Notified!</Header>
+        <Header>الحصول على اشعار!</Header>
         <Subheader>
-          Give us your email and we will notify you once it's on stock.
+          حط اميلك وراح نعلمك لما يكون متوفر
         </Subheader>
         <InputContainer>
-          <Input type="email" placeholder="Enter your email here" />
+          <Input type="email" placeholder="حط اميلك هنا" />
           <Button onClick={closeModal}>
             <ArrowForwardIcon />
           </Button>

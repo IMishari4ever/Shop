@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@utrustdev/utrust-ts-library": "1.0.4"
+  }
+}

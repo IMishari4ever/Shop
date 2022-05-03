@@ -282,7 +282,7 @@ const Order = () => {
           <ShipButton>
             {status === "To Ship" ? (
               <Action>
-                <Button onClick={() => handleModal("Ship")}>Ship Order</Button>
+                <Button onClick={() => handleModal("Ship")}>Complete Order</Button>
               </Action>
             ) : null}
           </ShipButton>

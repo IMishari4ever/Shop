@@ -18,11 +18,11 @@ const AllProducts = ({ path, filters, sort }) => {
     const getProducts = async () => {
       try {
         const res = await publicRequest.get(
-          path.includes("men")
+          path.includes("premium")
             ? `products?category=${path}`
             : path === "newbalance"
             ? "products?brand=new balance"
-            : path.includes("men") === false && path !== "instock"
+            : path.includes("premium") === false && path !== "instock"
             ? `products?brand=${path}`
             : path === "instock"
             ? "products?instock"

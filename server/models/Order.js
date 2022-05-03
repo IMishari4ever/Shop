@@ -8,8 +8,8 @@ const OrderSchema = new mongoose.Schema(
     amount: { type: Number, required: true },
     status: {
       type: String,
-      enum: ["Cancelled", "To Ship", "Shipped", "Delivered"],
-      default: "To Ship",
+      enum: ["Cancelled", "In progress", "Completed", "Delivered"],
+      default: "In progress",
     },
     products: [
       {

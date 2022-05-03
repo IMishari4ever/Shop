@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { mobile, tablet } from "../../responsive";
 import { Link } from "react-router-dom";
-import { BrandList } from "../NavigationLinks";
 
 const Container = styled.div`
   width: 100vw;
@@ -52,21 +51,7 @@ const BrandModal = () => {
   return (
     <Container>
       <Wrapper>
-        {BrandList.map((menu, index) => {
-          return (
-            <Center key={index}>
-              <MenuLinks key={index}>
-                <Link
-                  key={index}
-                  to={menu.path}
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  {menu.title}
-                </Link>
-              </MenuLinks>
-            </Center>
-          );
-        })}
+
       </Wrapper>
     </Container>
   );

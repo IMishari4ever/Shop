@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 const Categories = () => {
   return (
     <Container>
-      <Title>POPULAR BRANDS</Title>
+      <Title>المنتجات الشائعة</Title>
       <Wrapper>
         {categories.map((item) => (
           <CategoryItem item={item} key={item.id} />

@@ -279,9 +279,7 @@ const Product = () => {
     const getProduct = async () => {
       try {
         const res = await publicRequest.get("/products/" + id);
-        setColor("");
         setSize("");
-        setActiveColor(null);
         setActiveSize(null);
         setProduct(res.data);
       } catch (err) {
@@ -290,11 +288,7 @@ const Product = () => {
     };
     getProduct();
   }, [id]);
-  const handleColor = (e) => {
-    const selectedColor = e.target.id;
-    setColor(selectedColor);
-    setActiveColor(selectedColor);
-  };
+
   const handleSize = (e) => {
     const selectedSize = e && parseInt(e.target.id, 10);
     setActiveSize(selectedSize);
@@ -317,9 +311,9 @@ const Product = () => {
     }
   };
   const addToBag = () => {
-    if (color && size !== "") {
+    if (size !== "") {
       setAdd(true);
-      dispatch(addProduct({ ...product, quantity, color, size }));
+      dispatch(addProduct({ ...product, quantity, size }));
     } else {
       setRemind(true);
     }
@@ -345,7 +339,7 @@ const Product = () => {
               }}
             >
               <ArrowRightAltIcon style={{ transform: "rotate(180deg)" }} />
-              <Text>back</Text>
+              <Text>إلى الخلف</Text>
             </Action>
           </Left>
         </TextContainer>
@@ -353,7 +347,7 @@ const Product = () => {
           <Image src={product.img} />
           <CreditsInfo>
             <Credits>
-              This photo is from the official site of{" "}
+              حقوق هذه الصورة من الموقع الرسمي التابع لها ونخلي مسؤوليتنا من أي حقوق ملكية/فكرية{" "}
               <CreditLink href={product.credit} target="_blank">
                 {product.brand}.com
               </CreditLink>
@@ -364,32 +358,14 @@ const Product = () => {
           <Name>{product.name}</Name>
           <Info>
             {product.brand} / {product.category}
+            {console.log(product)}
           </Info>
           <Info>{formatAmount(product.price)}</Info>
           <ChoiceContainer>
             <ChoiceWrapper>
-              <ChoiceTitle>Available colors</ChoiceTitle>
-              {product.color?.map((c) => (
-                <ColorOutline
-                  key={c}
-                  id={c}
-                  onClick={handleColor}
-                  className={c === activeColor ? "active" : null}
-                >
-                  <BoxColor
-                    id={c}
-                    color={c}
-                    key={c}
-                    className={c === activeColor ? "active" : null}
-                  />
-                  <ArrowDropUpIcon
-                    style={{ opacity: c === activeColor ? 0.3 : 0 }}
-                  />
-                </ColorOutline>
-              ))}
             </ChoiceWrapper>
           </ChoiceContainer>
-          <ChoiceTitle>Select size</ChoiceTitle>
+          <ChoiceTitle>اختر عدد الأشهر</ChoiceTitle>
           <ChoiceContainer>
             <ChoiceWrapper>
               {product.size?.map((s) => {
@@ -412,19 +388,19 @@ const Product = () => {
             <Left>
               <Action onClick={openSize}>
                 <StraightenOutlinedIcon />
-                <Description>Size and fit guide</Description>
+                <Description>شرح كيف تتم العملية</Description>
               </Action>
             </Left>
             <Right>
               <Action onClick={openNotify}>
                 <NotificationAddOutlinedIcon />
-                <Description>Out of stock?</Description>
+                <Description>خلصت الكمية ؟</Description>
               </Action>
             </Right>
           </TextContainer>
           <ChoiceContainer>
             <ChoiceWrapper>
-              <ChoiceTitle>Quantity</ChoiceTitle>
+              <ChoiceTitle>العدد</ChoiceTitle>
               <QuantityWrapper>
                 <QuantityButton
                   onClick={() => handleQuantity("decrease")}
@@ -444,25 +420,24 @@ const Product = () => {
           </ChoiceContainer>
           <ButtonContainer>
             <Button onClick={addToBag}>
-              <ShoppingBagOutlinedIcon style={{ marginRight: "10px" }} /> Add to
-              bag
+              <ShoppingBagOutlinedIcon style={{ marginRight: "10px" }} /> إضافة إلى السلة
             </Button>
           </ButtonContainer>
           <Left>
             <DescriptionContainer>
               <AccessTimeOutlinedIcon />
-              <Description>City: 3-5 days, Province: 7-10 days.</Description>
+              <Description>التسليم شبه فوري وكحد اقصى 6 ساعات</Description>
             </DescriptionContainer>
           </Left>
           <Left>
             <DescriptionContainer>
               <LocalShippingOutlinedIcon />
-              <Description>Free shipping for orders above ₱5000.00</Description>
+              <Description>نتحمل الضريبة عنك إذا شريت اكثر من منتج</Description>
             </DescriptionContainer>
           </Left>
         </InfoContainer>
       </Wrapper>
-      <PopularProducts description="PEOPLE ALSO VIEW THESE" />
+      <PopularProducts description="ما هي السلع الأخرى التي يشتريها المستخدمون بعد عرض هذه السلعة؟" />
       <Newsletter />
       <Footer />
     </Container>

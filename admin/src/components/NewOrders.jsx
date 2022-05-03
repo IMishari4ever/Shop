@@ -88,9 +88,9 @@ const NewOrders = () => {
         color={
           type === "Delivered"
             ? "#5cb85c"
-            : type === "Shipped"
+            : type === "Completed"
             ? "#0275d8"
-            : type === "To Ship"
+            : type === "In Progress"
             ? "#110f12"
             : "#d9534f"
         }

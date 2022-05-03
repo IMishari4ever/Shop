@@ -20,7 +20,7 @@ const Header = styled.h3`
 const Processing = ({ display }) => {
   return (
     <Container display={display}>
-      <Header>Payment is processing...</Header>
+      <Header>عملية الدفع قيد المعالجة...</Header>
     </Container>
   );
 };

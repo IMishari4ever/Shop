@@ -136,11 +136,10 @@ const Success = () => {
           </Icon>
           <Header>Your payment was successful!</Header>
           <Subheader>
-            Your order was confirmed. You will receive an automated transaction
-            receipt shortly via email. Thank you for shopping
+            تم تأكيد طلبك، ستتلقى الفاتورة تلقائيًا بالأميل الخاص بك، شكرًا لك على اختيارك الترا بريميوم
           </Subheader>
           <Receipt href={data?.receipt_url} target="_blank">
-            View Receipt
+            عرض الفاتورة
             <ArrowRightAltIcon />
           </Receipt>
           <Action>
@@ -151,7 +150,7 @@ const Success = () => {
                 navigate("/orders");
               }}
             >
-              View orders
+              عرض الطلبات
             </Button>
             <Button
               bg={"black"}

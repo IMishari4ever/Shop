@@ -6,6 +6,8 @@ import Notify from "./Modal/Notify";
 import { sliderItems } from "../data";
 import { mobile, tablet, bigtablet } from "../responsive";
 import { useNavigate } from "react-router";
+import Intro from './Intro';
+import './Intro.css'
 
 const Container = styled.div`
   width: 100%;
@@ -130,26 +132,9 @@ const Carousel = () => {
   };
   return (
     <Container>
-      {showNotify && (
-        <Notify showModal={showNotify} setShowModal={setShowNotify} />
-      )}
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowBackIosIcon />
-      </Arrow>
-      <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
-          <Slide bg={item.bg} key={item.id}>
-            <ImgContainer>
-              <Image src={item.img} />
-            </ImgContainer>
-            <InfoContainer>
-              <Title>{item.title}</Title>
-              <Desc>{item.desc}</Desc>
-              <Button onClick={() => openNotify(item.btn)}>{item.btn}</Button>
-            </InfoContainer>
-          </Slide>
-        ))}
-      </Wrapper>
+
+                      <Intro/>
+
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowForwardIosIcon />
       </Arrow>

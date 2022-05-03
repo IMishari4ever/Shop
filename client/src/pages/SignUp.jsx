@@ -121,7 +121,7 @@ const SignUp = () => {
   const checkPassword = () => {
     if (password !== confirmPassword) {
       return false;
-    } else if (password.length < 8) {
+    } else if (password.length < 4) {
       return false;
     }
     return true;
@@ -149,46 +149,46 @@ const SignUp = () => {
       <Navbar />
       <MainContainer>
         <Wrapper>
-          <Title>BE PART OF AYLO FAMILY</Title>
+          <Title>كن جزءًا من الترا بريميوم</Title>
           <Form onSubmit={handleSubmit}>
             <InputField
               type="text"
-              placeholder="first name"
+              placeholder="اسمك الاول"
               onChange={(e) => setFirstName(e.target.value)}
               required
               minLength={2}
             />
             <InputField
               type="text"
-              placeholder="last name"
+              placeholder="اسمك الاخير"
               onChange={(e) => setLastName(e.target.value)}
               required
               minLength={2}
             />
             <InputField
               type="email"
-              placeholder="email"
+              placeholder="اميلك"
               onChange={(e) => setEmail(e.target.value)}
               required
               minLength={5}
             />
             <InputField
               type="text"
-              placeholder="username"
+              placeholder="اسم المستخدم"
               onChange={(e) => setUsername(e.target.value)}
               required
               minLength={5}
             />
             <InputField
               type="password"
-              placeholder="password"
+              placeholder="كلمة السر"
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={8}
             />
             <InputField
               type="password"
-              placeholder="confirm password"
+              placeholder="تأكيد كلمة السر"
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
               minLength={8}
@@ -196,11 +196,11 @@ const SignUp = () => {
             {password !== "" &&
             confirmPassword !== "" &&
             password !== confirmPassword ? (
-              <Error>Password do not match</Error>
+              <Error>كلمة السر لا تتطابق</Error>
             ) : password !== "" && password.length < 8 ? (
-              <Error>Password must be at least 8 characters</Error>
+              <Error>يجب ان تكون كلمة السر 8 احرف/ارقام كحد ادنى</Error>
             ) : username !== "" && username.length < 5 ? (
-              <Error>Username must be at least 5 characters</Error>
+              <Error>اسم المستخدم يجب ان يكون 5 احرف او أكثر</Error>
             ) : null}
             <Agreement htmlFor="false" style={{ marginTop: "10px" }}>
               <CheckBox
@@ -211,11 +211,11 @@ const SignUp = () => {
                 id="false"
                 required
               />
-              I have read and agree to the <Link>Privacy policy</Link> and{" "}
-              <Link>Terms</Link> of Aylo.
+              قرأت و أوافق على <Link>سياسة خصوصية</Link> و{" "}
+              <Link>قوانين</Link> الترا بريميوم
             </Agreement>
             <Button type="submit" disabled={isFetching ? true : false}>
-              Sign Up
+              التسجيل
             </Button>
           </Form>
           <Options
@@ -223,7 +223,7 @@ const SignUp = () => {
               navigate("/sign-in");
             }}
           >
-            Already a member? Click here
+            هل لديك حساب بالفعل؟ اضغط هنا
           </Options>
         </Wrapper>
       </MainContainer>

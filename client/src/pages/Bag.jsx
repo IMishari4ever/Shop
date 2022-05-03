@@ -22,7 +22,7 @@ import {
 import { useDispatch } from "react-redux";
 
 const KEY =
-  "pk_test_51KG22qHIMcDpTdIvD1sKwUhCjIX3yqJjioiVXJlShoT6YpogyuyqE0hFCaoec1ebVcyqbIQQsLRAfuKNUueOYRgM007KHDRXp1";
+  "pk_test_51HJ8aBJ3GPrVzcrgkNXa9ri5KbUw7p5NUV8dPD7WIL5oLPkB0iG5sPmOpDrHZvZZpBE7CdpMCqzMkQP8d5Dybpqs00mHMioiRf";
 
 const Container = styled.div``;
 
@@ -378,33 +378,33 @@ const Bag = () => {
               }}
             >
               <ArrowRightAltIcon style={{ transform: "rotate(180deg)" }} />
-              <Text style={{ marginLeft: "5px" }}>back</Text>
+              <Text style={{ marginLeft: "5px" }}>إلى الخلف</Text>
             </Action>
           </Left>
         </TextContainer>
         <BagContainer>
           <ProductContainer>
-            <Subtitle>Shoes in Bag</Subtitle>
+            <Subtitle>المنتجات بالسلة</Subtitle>
             <TextContainer>
               <Left>
-                <Text>Product</Text>
+                <Text>المنتج</Text>
               </Left>
               <Center>
-                <Text>Qty.</Text>
+                <Text>الكمية</Text>
               </Center>
               <Right>
-                <Text>Subtotal</Text>
+                <Text>القيمة الأولية</Text>
               </Right>
             </TextContainer>
             <Hr height={"3px"} />
             {bag.quantity === 0 && (
               <TextContainer style={{ margin: "50px auto" }}>
-                <Text>Your bag is empty</Text>
+                <Text>سلتك فارغة</Text>
               </TextContainer>
             )}
             {bag.products.map((product) => (
               <Item
-                key={product._id + product.color + product.size}
+                key={product._id + product.size}
                 id={product._id}
               >
                 <Info>
@@ -422,14 +422,9 @@ const Bag = () => {
                           <ProductName>{product.name}</ProductName>
                           <ProductInfo>{product.brand}</ProductInfo>
                           <ProductInfo> {product.size} US</ProductInfo>
-                          <ProductColor>
-                            <ColorOutline>
-                              <BoxColor color={product.color} />
-                            </ColorOutline>
-                          </ProductColor>
                           <RemoveContainer>
                             <Remove onClick={() => handleRemove(product)}>
-                              Remove
+                              حذف
                             </Remove>
                           </RemoveContainer>
                         </ProductDetails>
@@ -471,15 +466,15 @@ const Bag = () => {
           <Hr height={"2px"} />
           <SummaryContainer>
             <Summary>
-              <Subtitle>Order Summary</Subtitle>
+              <Subtitle>ملخص الطلب</Subtitle>
               <SummaryItem>
-                <SummaryItemText>Subtotal</SummaryItemText>
+                <SummaryItemText>القيمة الأولية</SummaryItemText>
                 <SummaryItemPrice>
                   {bag.quantity === 0 ? "--" : formatAmount(bag.total)}
                 </SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Estimated Shipping</SummaryItemText>
+                <SummaryItemText>ضريبة بوابة الدفع</SummaryItemText>
                 <SummaryItemPrice>
                   {bag.quantity === 0
                     ? "--"
@@ -489,7 +484,7 @@ const Bag = () => {
                 </SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Shipping Discount</SummaryItemText>
+                <SummaryItemText>كوبون الخصم</SummaryItemText>
                 <SummaryItemPrice>
                   {bag.quantity === 0
                     ? "--"
@@ -500,7 +495,7 @@ const Bag = () => {
               </SummaryItem>
               <Hr height={"3px"} />
               <SummaryItem font="total">
-                <SummaryItemText>Total</SummaryItemText>
+                <SummaryItemText>الإجمالي</SummaryItemText>
                 <SummaryItemPrice>
                   {bag.quantity !== 0 && bag.total < 4999
                     ? formatAmount(totalAmount + 250)
@@ -512,16 +507,16 @@ const Bag = () => {
             </Summary>
             <CheckOut>
               <StripeCheckout
-                name="AYLO"
-                image="https://i.ibb.co/7gnqD5j/aylo.png"
+                name="Ray"
+                image=""
                 billingAddress
                 shippingAddress
-                description={`Your total is ${formatAmount(totalAmount)}`}
+                description={`القيمة الإجمالية ${formatAmount(totalAmount)}`}
                 amount={totalAmount * 100}
                 token={onToken}
                 stripeKey={KEY}
               >
-                <Button>Checkout</Button>
+                <Button>ادفع</Button>
               </StripeCheckout>
             </CheckOut>
             <TextContainer style={{ paddingTop: "20px" }}>

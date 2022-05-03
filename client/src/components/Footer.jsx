@@ -145,63 +145,63 @@ const Footer = () => {
     <MainContainer>
       <Container style={{ paddingTop: "3vh" }}>
         <Left>
-          <Title>About Aylo</Title>
+          <Title>Ultra Premium</Title>
           <List>
-            <ListItem>About Us</ListItem>
-            <ListItem>Our Services</ListItem>
-            <ListItem>Careers</ListItem>
-            <ListItem>Privacy Policy</ListItem>
-            <ListItem>Affiliate Program</ListItem>
-            <ListItem>Products</ListItem>
+            <ListItem>رؤيتنا</ListItem>
+            <ListItem>خدماتنا</ListItem>
+            <ListItem>سيرتنا</ListItem>
+            <ListItem>سياسة الخصوصية</ListItem>
+            <ListItem>رابط الإحالة</ListItem>
+            <ListItem>المنتجات</ListItem>
           </List>
         </Left>
         <Center>
-          <Title>Customer Service</Title>
+          <Title>خدمة العملاء</Title>
           <List>
-            <ListItem>Order Status</ListItem>
-            <ListItem>Payment Options</ListItem>
-            <ListItem>Contact Us</ListItem>
-            <ListItem>Returns & Refund</ListItem>
-            <ListItem>Help Centre</ListItem>
-            <ListItem>FAQ</ListItem>
+            <ListItem>حالة الطلب</ListItem>
+            <ListItem>طرق الدفع</ListItem>
+            <ListItem>اتصل بينا</ListItem>
+            <ListItem>سياسة الاسترداد</ListItem>
+            <ListItem>قسم المساعدة</ListItem>
+            <ListItem>الاسئلة الشائعة</ListItem>
           </List>
         </Center>
         <Right>
-          <Title>Community</Title>
+          <Title>المجتمع</Title>
           <List>
-            <ListItem>Overview</ListItem>
-            <ListItem>Events</ListItem>
-            <ListItem>Newsletter</ListItem>
-            <ListItem>Environment</ListItem>
-            <ListItem>Corporate Citizenship</ListItem>
-            <ListItem>Diversity</ListItem>
+            <ListItem>نظرة عامة</ListItem>
+            <ListItem>العروض</ListItem>
+            <ListItem>الخدمات الحديثة</ListItem>
+            <ListItem>كوبونات الخصم</ListItem>
+            <ListItem>الاقتراحات</ListItem>
+            <ListItem>الدسكورد</ListItem>
           </List>
         </Right>
       </Container>
       <Container>
         <Left>
-          <Title>Contact</Title>
+          <Title>التواصل</Title>
           <ContactItem>
             <Icon>
               <Room />
             </Icon>
-            1041 Bonifacio Global City, Taguig
+            1041 الشرقية، الظهران
           </ContactItem>
           <ContactItem>
             <Icon>
               <Phone />
             </Icon>{" "}
-            (051) 544 8888
+            (054) 544 8888
           </ContactItem>
           <ContactItem>
             <Icon>
               <MailOutline />
             </Icon>{" "}
-            customer.service@aylo.com
+            d_@hotmaill.com
           </ContactItem>
         </Left>
         <Center>
-          <Title>Follow us on</Title>
+          <Title>تابعنا على</Title>
           <SocialContainer>
             <SocialIcon>
               <FacebookOutlinedIcon />
@@ -215,7 +215,7 @@ const Footer = () => {
           </SocialContainer>
         </Center>
         <Right>
-          <Title>Get the app on</Title>
+          <Title>احصل على التطبيق في:</Title>
           <StoreContainer>
             <Store src={process.env.PUBLIC_URL + "/appstore.svg"} />
             <Store src={process.env.PUBLIC_URL + "/playstore.svg"} />
@@ -223,7 +223,7 @@ const Footer = () => {
         </Right>
       </Container>
       <Hr />
-      <Bottom>Copyright &copy; {year} Aylo.</Bottom>
+      <Bottom>كامل الحقوق محفوظة &copy; {year} Ultra Premium</Bottom>
     </MainContainer>
   );
 };
